@@ -22,8 +22,12 @@ select * from StudentInfo;
 
 select distinct Address from StudentInfo; 
 
-select * from StudentInfo where Id= 1;
+
 
 
 alter table StudentInfo add postalCose varchar(200);
+select * from StudentInfo
+
+update StudentInfo 
+set postalCose='1231' where Id=1
 select * from StudentInfo
