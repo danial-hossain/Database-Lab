@@ -1,0 +1,31 @@
+create database student
+
+create table StudentInfo(
+  Id int,
+  FirstName varchar(200),
+  LastName varchar(200),
+  Address varchar(200),
+  ParentName varchar(200),
+  Age int,
+);
+
+insert into StudentInfo values (1,'Nunman','De Tonmoy','Mirpur','Legend',30 )
+insert into StudentInfo values (2,'Danial','Hossain','Gulshan','Dhaka',23 )
+insert into StudentInfo values (3,'Abdur','Rahman','Mirpur','Ali Abdel Aziz',31 )
+insert into StudentInfo values (4,'Safkat','Rakhmonov','Gaptoli','Mongolia',23 )
+insert into StudentInfo values (5,'Hamzat','Chimaov','Mirpur','Ramzan',24 )
+
+select * from StudentInfo
+insert into StudentInfo (Id,FirstName,LastName,Address,ParentName,Age) values (7,'Islam','Makhachev','Dagestan','AbdulManap',34)
+
+select * from StudentInfo;
+
+select distinct Address from StudentInfo; 
+
+select Address from StudentInfo where Id= 1;
+
+select * from Person where city = 'Dhaka'
+select * from Person where FirstName='Abdur' or city='Dhaka'
+
+alter table Person add age int;
+select * from Person
