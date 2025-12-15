@@ -1,33 +1,47 @@
-create database student
+create database exampleDatabase
 
-create table StudentInfo(
-  Id int,
+
+create table Person(
+  P_Id int,
   FirstName varchar(200),
   LastName varchar(200),
   Address varchar(200),
-  ParentName varchar(200),
-  Age int,
+  city varchar(200)
 );
 
-insert into StudentInfo values (1,'Nunman','De Tonmoy','Mirpur','Legend',30 )
-insert into StudentInfo values (2,'Danial','Hossain','Gulshan','Dhaka',23 )
-insert into StudentInfo values (3,'Abdur','Rahman','Mirpur','Ali Abdel Aziz',31 )
-insert into StudentInfo values (4,'Safkat','Rakhmonov','Gaptoli','Mongolia',23 )
-insert into StudentInfo values (5,'Hamzat','Chimaov','Mirpur','Ramzan',24 )
-
-select * from StudentInfo
-insert into StudentInfo (Id,FirstName,LastName,Address,ParentName,Age) values (7,'Islam','Makhachev','Dagestan','AbdulManap',34)
-
-select * from StudentInfo;
-
-select distinct Address from StudentInfo; 
+insert into Person values (1,'Abdur','Rahim','Mirpur','Dhaka' )
+insert into Person values (2,'Danial','Hossain','Gulshan','Dhaka' )
+insert into Person values (3,'Abdur','X','Mirpur','Dhaka' )
+insert into Person values (4,'Abdur','Y','Mirpur','Dhaka' )
+insert into Person values (5,'Abdur','M','Mirpur','Dhaka' )
+insert into Person values (16,'Abdur','R','Mirpur','Dhaka' )
 
 
+insert into Person (P_Id,FirstName,Address,city) values (6,'Abdur5','Rahim5','Server')
+
+select * from Person
+
+select distinct Address from person; 
+
+select city from Person where P_Id= 1;
+
+select * from Person where city = 'Dhaka'
+select * from Person where FirstName='Abdur' or city='Dhaka'
+
+alter table Person add age int;
+select * from Person
 
 
-alter table StudentInfo add postalCose varchar(200);
-select * from StudentInfo
+update Person 
+set LastName ='rahim'
+where P_Id=6
 
-update StudentInfo 
-set postalCose='1231' where Id=1
-select * from StudentInfo
+select * from Person 
+
+delete Person 
+where P_Id=7
+select * from Person  where P_Id between 1 and 6
+
+select * from Person where FirstName='Abdur' or city='Mirpur'
+
+select * from Person where Address like '%pur' 
