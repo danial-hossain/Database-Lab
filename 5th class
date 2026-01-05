@@ -1,0 +1,69 @@
+create database sqlJoin;
+
+use sqlJoin 
+
+create table A(
+   id int primary key,
+   Name varchar(200)
+
+);
+
+insert into A values (1,'Rakib')
+insert into A values (2,'Sakib')
+insert into A values (3,'Rahim')
+insert into A values (4,'Rasel')
+
+create table B(
+   id int ,
+   city varchar(200),
+   foreign key(id) 
+   references A(id)
+
+);
+insert into B values(1,'Dhaka')
+insert into B values(1,'Khulna')
+insert into B values(1,'Ctg')
+
+select * from A
+select * from B
+
+--cp -> total rows * num of (rows * rows) 
+--cp -> total colums * columns(A) + column (B)
+select * from A,B
+
+select * 
+from A 
+inner join B 
+on A.id =B.id
+
+select * 
+from A 
+left join B 
+on A.id=B.id
+
+select * 
+from B 
+right join A 
+on A.id=B.id
+
+select *
+ from A 
+ full join B 
+ on A.id=B.id
+
+
+select * from A 
+union 
+Select * from B 
+
+select * from A 
+union all 
+select * from B
+
+select * from A 
+intersect
+Select * from B 
+
+select * from A 
+except 
+Select * from B 
